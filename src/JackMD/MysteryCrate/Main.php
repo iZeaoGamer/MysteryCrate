@@ -83,7 +83,7 @@ class Main extends PluginBase implements Listener
     public function onLoad()
     {
         $this->getLogger()->info(TextFormat::YELLOW . "MysteryCrate is loading...");
-        $this->getLogger()->info(TextFormat::YELLOW . "Make sure you have VanillaEnchantment plugin.");
+        $this->getLogger()->info(TextFormat::YELLOW . "Make sure you have TeaSpoon plugin.");
     }
 
     public function onEnable()
@@ -93,7 +93,7 @@ class Main extends PluginBase implements Listener
             mkdir($this->getDataFolder());
         }
 
-        if ($this->getServer()->getPluginManager()->getPlugin("VanillaEnchantments")) {
+        if ($this->getServer()->getPluginManager()->getPlugin("TeaSpoon")) {
 
             $this->saveDefaultConfig();
             $this->crateName = $this->getConfig()->getNested("crateName");
@@ -141,7 +141,7 @@ ___  ___          _                  _____           _
 Enabled MysteryCrate by JackMD for PocketMine-MPs-API
         ");
         } else {
-            $this->getLogger()->error("VanillaEnchantments plugin not found.");
+            $this->getLogger()->error("TeaSpoon plugin not found.");
             $this->getLogger()->error("This plugin depends on it to add enchants on items.");
             $this->getLogger()->error("This will continue until PocketMine-MP registers enchants.");
             $this->onDisable();
