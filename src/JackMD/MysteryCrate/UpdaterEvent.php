@@ -108,6 +108,7 @@ class UpdaterEvent extends PluginTask
                     $player = $this->player;
                     
                     if ($player instanceof Player) {
+                        $player = $this->player;
                         $this->player->getInventory()->addItem($slot13);
                         $this->player->sendMessage(TextFormat::GREEN . "You recieved " . TextFormat::YELLOW . $slot13->getName() . TextFormat::LIGHT_PURPLE . " (x" . $slot13->getCount() . ")" . TextFormat::GREEN . " from " . $this->plugin->crateName);
                         $this->plugin->getServer()->broadcastMessage(TextFormat::AQUA . "$player " . TextFormat::YELLOW . "§ajust opened §bMysteryCrate §cand got: §3$slot13");
