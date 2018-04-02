@@ -111,7 +111,8 @@ class UpdaterEvent extends PluginTask
                     if ($playerName instanceof Player) {
                         $this->player->getInventory()->addItem($slot13);
                         $this->player->sendMessage(TextFormat::GREEN . "You recieved " . TextFormat::YELLOW . $slot13->getName() . TextFormat::LIGHT_PURPLE . " (x" . $slot13->getCount() . ")" . TextFormat::GREEN . " from " . $this->plugin->crateName);
-                        $this->plugin->getServer()->broadcastMessage(TextFormat::AQUA . "$player->getName() " . TextFormat::YELLOW . "§ajust opened §bMysteryCrate §cand got: §3$slot13");
+                        $playerName = $player->getName();
+                        $this->plugin->getServer()->broadcastMessage(TextFormat::AQUA . "$playerName " . TextFormat::YELLOW . "§ajust opened §bMysteryCrate §cand got: §3$slot13");
                     }
 
                     $this->plugin->getServer()->getScheduler()->scheduleDelayedTask(new RemoveChest($this->plugin, $cpos), 20);
