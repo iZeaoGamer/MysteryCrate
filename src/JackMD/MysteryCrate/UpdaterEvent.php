@@ -157,7 +157,7 @@ class UpdaterEvent extends Task{
 						}else{
 							$this->player->getInventory()->addItem($slot13);
 							$win_message = str_replace(["%REWARD%", "%COUNT%", "%CRATE%"], [$slot13->getName(), $slot13->getCount(), ucfirst($type)], Lang::$win_message);
-							$player->sendMessage(Lang::$win_message);
+							$this->player->sendMessage(Lang::$win_message);
 						}
 					}
 					$dmg = $block->getDamage();
